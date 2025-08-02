@@ -1,0 +1,7 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <flow name="healthCheckFlow">
+        <http:listener doc:name="Listener" doc:id="e7b0b4c1-1f73-48c5-8b06-9fdff32f6b5f" config-ref="HTTP_Listener_config" path="/health"/>
+        <set-payload value="{ 'status': 'UP' }" doc:name="Set Payload" doc:id="9807e45b-0e95-4c25-80af-4b1b17e7a387"/>
+    </flow>
+</mule>
